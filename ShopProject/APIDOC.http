@@ -1,0 +1,72 @@
+
+### GET - View all categories
+GET http://127.0.0.1:8000/category/
+Accept: application/json
+
+###
+
+### POST - Add category
+POST http://127.0.0.1:8000/category/
+Content-Type: application/json
+
+{
+    "category_name": "Electronics",
+    "description": "Electronic products"
+}
+
+###
+
+### GET - View category by ID
+GET http://127.0.0.1:8000/category/1/
+Accept: application/json
+
+###
+
+### PUT - Update category
+PUT http://127.0.0.1:8000/category/1/
+Content-Type: application/json
+
+{
+    "category_name": "Home Appliances",
+    "description": "All home appliance products"
+}
+
+###
+
+### DELETE - Delete category
+DELETE http://127.0.0.1:8000/category/1/
+
+
+### GET Product
+GET http://127.0.0.1:8000/product/
+
+###
+
+### POST Product
+POST http://127.0.0.1:8000/product/
+Content-Type: application/json
+
+{
+    "category": 1,
+    "product_name": "Laptop",
+    "price": "55000.00",
+    "stock": 10
+}
+
+###
+
+### PUT Product
+PUT http://127.0.0.1:8000/product/1/
+Content-Type: application/json
+
+{
+    "category": 1,
+    "product_name": "HP Laptop",
+    "price": "60000.00",
+    "stock": 15
+}
+
+###
+
+### DELETE Product
+DELETE http://127.0.0.1:8000/product/1/

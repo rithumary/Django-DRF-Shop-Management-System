@@ -1,0 +1,32 @@
+"""
+URL configuration for ShopProject project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/6.1/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+from myapp.views import (
+    Category_API,
+    Category_Detail_API,
+    Product_API,
+    Product_Detail_API
+)
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('category/', Category_API.as_view()),
+    path('category/<int:pk>/', Category_Detail_API.as_view()),
+    path('product/', Product_API.as_view()),
+    path('product/<int:pk>/', Product_Detail_API.as_view()),
+]
